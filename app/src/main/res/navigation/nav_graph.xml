@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/moviesListFragment">
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.ahmedr.movies_app.ui.fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedMoviesFragment"
+        android:name="com.ahmedr.movies_app.ui.fragments.SavedMoviesFragment"
+        android:label="fragment_saved_movies"
+        tools:layout="@layout/fragment_saved_movies" >
+        <action
+            android:id="@+id/action_savedMoviesFragment_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesListFragment"
+        android:name="com.ahmedr.movies_app.ui.fragments.MoviesListFragment"
+        android:label="MoviesListFragment" >
+        <action
+            android:id="@+id/action_moviesListFragment_to_movieDetailActivity"
+            app:destination="@id/movieDetailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/movieDetailActivity"
+        android:name="com.ahmedr.movies_app.ui.MovieDetailActivity"
+        android:label="activity_movie_detail"
+        tools:layout="@layout/activity_movie_detail" />
+</navigation>
