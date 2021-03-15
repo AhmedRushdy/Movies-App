@@ -9,32 +9,31 @@
     <style name="MovieItems.Corners" parent="Widget.MaterialComponents.CardView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeBottomRight">10dp</item>
-        <item name="cornerSizeBottomLeft">40dp</item>
-        <item name="cornerSizeTopRight">40dp</item>
+        <item name="cornerSizeBottomLeft">35dp</item>
+        <item name="cornerSizeTopRight">35dp</item>
         <item name="cornerSizeTopLeft">10dp</item>
         <item name="contentPadding">0dp</item>
 
     </style>
     <style name="NewsItems.Corners" parent="Widget.MaterialComponents.CardView">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeBottomRight">10dp</item>
+        <item name="cornerSizeBottomRight">15dp</item>
         <item name="cornerSizeBottomLeft">55dp</item>
         <item name="cornerSizeTopRight">55dp</item>
-        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeTopLeft">15dp</item>
     </style>
 
 <!--    <style name="SelectableItemTheme">-->
 <!--        <item name="colorControlHighlight">@color/colorAccent</item>-->
 <!--    </style>-->
 
-    <style name="Widget.Task1.ImageButton" parent="">
+    <style name="Widget.Task1.ImageButton" parent="Widget.MaterialComponents.CardView">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="rippleColor">@color/colorAccent</item>
-<!--        <item name="android:theme">@style/SelectableItemTheme</item>-->
+        <item name="background">@color/transparentBackground</item>
         <item name="cornerSizeTopLeft">10dp</item>
         <item name="cornerSizeBottomLeft">10dp</item>
-
     </style>
     <style name="Play_btn_FloatingActionBotton" parent="Widget.AppCompat.ActionButton">
         <item name="rippleColor">@color/white</item>

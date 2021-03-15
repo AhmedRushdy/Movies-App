@@ -5,12 +5,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
+                android:id="@+id/parentVer"
                 >
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="120dp"
-                    android:layout_height="150dp"
+                    android:id="@+id/movie_image"
+                    android:layout_width="130dp"
+                    android:layout_height="170dp"
                     android:scaleType="fitXY"
                     android:src="@color/colorPrimaryDark"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -21,12 +22,18 @@
 
 
                 <TextView
+                    android:id="@+id/movie_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
-                    android:elevation="10dp"
                     android:textStyle="bold"
                     android:text="@string/movie_name"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="15"
                     android:textColor="@color/white"
                     android:padding="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
