@@ -1,6 +1,5 @@
 package com.ahmedr.movies_app.api
 
-import com.ahmedr.movies_app.model.response.trending.TrendingMoviesResponse
 import com.ahmedr.movies_app.model.response.popular.PopularMoviesResponse
 import com.ahmedr.movies_app.model.response.upcoming.UpComingResponse
 import com.ahmedr.movies_app.utils.Constants.Companion.API_KEY

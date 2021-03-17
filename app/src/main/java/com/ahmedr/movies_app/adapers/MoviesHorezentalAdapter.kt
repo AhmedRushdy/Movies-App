@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmedr.movies_app.R
-import com.ahmedr.movies_app.model.response.upcoming.Result
+import com.ahmedr.movies_app.model.response.Result
 import com.ahmedr.movies_app.databinding.MovieItemBinding
 import com.bumptech.glide.Glide
 
@@ -45,12 +45,22 @@ class MoviesHorezentalAdapter : RecyclerView.Adapter<MoviesHorezentalAdapter.Mov
                     Log.i("poster","poster is null")
                 }
                 parentVer.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.ver_anim)
-
+                holder.itemView.apply {
+                    setOnClickListener {
+                        onItemClickListener?.let { it(result) }
+                    }
+                }
             }
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    private var onItemClickListener: ((Result) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Result) -> Unit) {
+        onItemClickListener = listener
     }
 
 }

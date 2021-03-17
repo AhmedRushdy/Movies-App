@@ -139,7 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:text="@string/news"
+            android:text="@string/popular"
             android:textAppearance="?textAppearanceHeadline6"
             android:textColor="@color/white"
             android:textSize="25sp"

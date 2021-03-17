@@ -24,7 +24,5 @@ class HistoryFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_history, container, false)
     }
 
-    companion object {
 
-    }
 }

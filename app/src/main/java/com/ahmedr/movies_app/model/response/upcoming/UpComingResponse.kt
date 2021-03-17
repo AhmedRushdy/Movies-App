@@ -1,4 +1,5 @@
 package com.ahmedr.movies_app.model.response.upcoming
+import com.ahmedr.movies_app.model.response.Result
 
 data class UpComingResponse(
     val dates: Dates,

@@ -1,4 +1,6 @@
-package com.ahmedr.movies_app.model.response.popular
+package com.ahmedr.movies_app.model.response
+
+import java.io.Serializable
 
 data class Result(
     val adult: Boolean,
@@ -15,4 +17,4 @@ data class Result(
     val video: Boolean,
     val vote_average: Double,
     val vote_count: Int
-)
+):Serializable

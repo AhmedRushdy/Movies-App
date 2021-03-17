@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmedr.ma_task1.adapers.MoviesVerticalAdapter
 import com.ahmedr.movies_app.R
@@ -19,7 +20,7 @@ import com.ahmedr.movies_app.utils.Resource
 
 class MoviesListFragment : Fragment() {
     lateinit var viewModel: MoviesViewModel
-    lateinit var moviesHorezentalAdapter: MoviesHorezentalAdapter
+    lateinit var moviesHorizontalAdapter: MoviesHorezentalAdapter
     lateinit var moviesVerticalAdapter: MoviesVerticalAdapter
 
     var binding: FragmentMoviesListBinding? = null
@@ -40,8 +41,28 @@ class MoviesListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         initRecyclerView()
+        moviesVerticalAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("movie_info", it)
+                Toast.makeText(requireContext(), "aaaa", Toast.LENGTH_LONG)
+            }
 
+            findNavController().navigate(
+                R.id.action_moviesListFragment_to_movieDetailActivity,
+                bundle
+            )
+        }
+        moviesHorizontalAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("movie_info", it)
+                Toast.makeText(requireContext(), "aaaa", Toast.LENGTH_LONG)
+            }
 
+            findNavController().navigate(
+                R.id.action_moviesListFragment_to_movieDetailActivity,
+                bundle
+            )
+        }
         viewModel.popularMovies.observe(viewLifecycleOwner, Observer { response->
             when(response){
                 is Resource.Success ->{
@@ -62,8 +83,7 @@ class MoviesListFragment : Fragment() {
             when(response){
                 is Resource.Success ->{
                     response.data?.let { moviesResponse->
-                        Toast.makeText(activity,"done",Toast.LENGTH_LONG).show()
-                        moviesHorezentalAdapter.differ.submitList(moviesResponse.results)
+                        moviesHorizontalAdapter.differ.submitList(moviesResponse.results)
                     }
                 }
                 is Resource.Error ->{
@@ -80,10 +100,10 @@ class MoviesListFragment : Fragment() {
 
 }
     private fun initRecyclerView() {
-        moviesHorezentalAdapter = MoviesHorezentalAdapter()
+        moviesHorizontalAdapter = MoviesHorezentalAdapter()
         moviesVerticalAdapter = MoviesVerticalAdapter()
         binding?.horizontalRv?.apply {
-            adapter = moviesHorezentalAdapter
+            adapter = moviesHorizontalAdapter
         }
         binding?.verticalRv?.apply {
             adapter = moviesVerticalAdapter
