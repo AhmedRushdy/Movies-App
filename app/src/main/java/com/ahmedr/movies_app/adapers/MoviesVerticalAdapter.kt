@@ -37,7 +37,6 @@ class MoviesVerticalAdapter : RecyclerView.Adapter<MoviesVerticalAdapter.MoviesV
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
         val result = differ.currentList[position]
-        val context = holder.binding.parentHor.context
 
         holder.binding.apply {
             posterMovieName.text = result.title
