@@ -10,8 +10,10 @@ interface MoviesDAO {
     suspend fun insert(movie:Result):Long
 
     @Query("select * from movie_data")
-    fun getAllArticles(): LiveData<List<Result>>
+    fun getAllMovies(): LiveData<List<Result>>
 
     @Delete
-    suspend fun deleteArticle(result: Result)
+    suspend fun deleteMovie(result: Result)
+    @Query("delete from movie_data")
+    suspend fun deleteAllMovies()
 }

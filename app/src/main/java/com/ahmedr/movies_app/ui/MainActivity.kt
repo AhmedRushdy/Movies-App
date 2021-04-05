@@ -1,7 +1,7 @@
 package com.ahmedr.movies_app.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -9,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.ahmedr.movies_app.R
 import com.ahmedr.movies_app.databinding.ActivityMainBinding
 import com.ahmedr.movies_app.repositories.MoviesRepository
+import com.ahmedr.movies_app.room.MoviesDatabase
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 
@@ -23,13 +24,15 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val moviesRepository = MoviesRepository()
-        val viewModelProvider = MoviesViewModelProvider(moviesRepository,application)
-        viewModel = ViewModelProvider(this,viewModelProvider).get(MoviesViewModel::class.java)
+        val moviesRepository = MoviesRepository(MoviesDatabase(this))
+        val viewModelProvider = MoviesViewModelProvider(moviesRepository, application)
+        viewModel = ViewModelProvider(this, viewModelProvider).get(MoviesViewModel::class.java)
 
         //setting navBottom
         val navFragmentHost = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navFragmentHost.navController
+
         val radius = resources.getDimension(R.dimen.radius_small)
         val bottomNavigationViewBackground = binding.navBottom.background as MaterialShapeDrawable
         bottomNavigationViewBackground.shapeAppearanceModel =

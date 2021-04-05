@@ -1,4 +1,4 @@
-package com.ahmedr.movies_app.utils
+package com.ahmedr.movies_app
 
 import android.app.Application
 

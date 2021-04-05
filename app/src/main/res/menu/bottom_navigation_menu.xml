@@ -2,9 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-
     <item
         android:id="@+id/savedMoviesFragment"
         android:enabled="true"
@@ -13,9 +10,9 @@
 
     <item
         android:id="@+id/historyFragment"
-        android:title="History"
+        android:title="Search"
         android:enabled="true"
-        android:icon="@drawable/ic_outline_watch_later"
+        android:icon="@drawable/ic_search"
        />
     <item
         android:id="@+id/moviesListFragment"

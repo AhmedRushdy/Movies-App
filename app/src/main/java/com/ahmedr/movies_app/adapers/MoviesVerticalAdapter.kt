@@ -10,15 +10,42 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ahmedr.movies_app.R
 import com.ahmedr.movies_app.databinding.ItemNewsBinding
 import com.ahmedr.movies_app.model.response.Result
+import com.ahmedr.movies_app.ui.MoviesViewModel
 import com.bumptech.glide.Glide
 
-class MoviesVerticalAdapter : RecyclerView.Adapter<MoviesVerticalAdapter.MoviesViewHolder>() {
-    inner class MoviesViewHolder(val binding: ItemNewsBinding) :
-        RecyclerView.ViewHolder(binding.root)
+class MoviesVerticalAdapter ( var viewModel: MoviesViewModel): RecyclerView.Adapter<MoviesVerticalAdapter.MoviesViewHolder>() {
+
+    inner class MoviesViewHolder(private val binding: ItemNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(result: Result) {
+            binding.apply {
+                posterMovieName.text = result.title
+                try {
+                    Glide.with(root).load("https://image.tmdb.org/t/p/w500" + result.backdrop_path)
+                        .placeholder(R.drawable.defult)
+                        .error(R.drawable.defult)
+                        .into(moviePoster)
+                } catch (e: Exception) {
+                    Log.i("poster", "poster is null")
+                }
+                parentHor.animation =
+                    AnimationUtils.loadAnimation(itemView.context, R.anim.hor_rv_anim)
+
+                rvSaveBtn.setOnClickListener {
+                    viewModel.saveMovie(result)
+                }
+            }
+            itemView.apply {
+                setOnClickListener {
+                    onItemClickListener?.let { it(result) }
+                }
+            }
+        }
+    }
 
     private val differCallback = object : DiffUtil.ItemCallback<Result>() {
         override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.m_id == newItem.m_id
         }
 
         override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
@@ -37,28 +64,7 @@ class MoviesVerticalAdapter : RecyclerView.Adapter<MoviesVerticalAdapter.MoviesV
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
         val result = differ.currentList[position]
-
-        holder.binding.apply {
-            posterMovieName.text = result.title
-            try {
-                Glide.with(root).load("https://image.tmdb.org/t/p/w500" + result.backdrop_path)
-                    .placeholder(R.drawable.defult)
-                    .error(R.drawable.defult)
-                    .into(moviePoster);
-            } catch (e: Exception) {
-                Log.i("poster", "poster is null")
-            }
-            parentHor.animation =
-                AnimationUtils.loadAnimation(holder.itemView.context, R.anim.hor_rv_anim)
-
-        }
-        holder.itemView.apply {
-            setOnClickListener {
-                onItemClickListener?.let { it(result) }
-            }
-        }
-
-
+        holder.bind(result)
     }
 
     override fun getItemCount(): Int {
@@ -71,4 +77,6 @@ class MoviesVerticalAdapter : RecyclerView.Adapter<MoviesVerticalAdapter.MoviesV
     fun setOnItemClickListener(listener: (Result) -> Unit) {
         onItemClickListener = listener
     }
+
+
 }

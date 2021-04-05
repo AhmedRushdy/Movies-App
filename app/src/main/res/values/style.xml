@@ -45,4 +45,8 @@
         <item name="background">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="Widget.Task1.ProgressBar" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="indicatorColor">@color/colorAccent</item>
+        <item name="minHideDelay">1500</item>
+    </style>
 </resources>

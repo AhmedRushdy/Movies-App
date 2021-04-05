@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.ahmedr.movies_app.repositories.MoviesRepository
 
 class MoviesViewModelProvider(
-    val moviesRepository: MoviesRepository
+    private val moviesRepository: MoviesRepository
     , val app: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

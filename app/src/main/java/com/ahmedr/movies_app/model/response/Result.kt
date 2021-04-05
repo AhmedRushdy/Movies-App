@@ -1,7 +1,10 @@
 package com.ahmedr.movies_app.model.response
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import android.os.Parcel
+import android.os.Parcelable
+import android.text.ParcelableSpan
+import androidx.room.*
+import com.ahmedr.movies_app.room.Converter
 import java.io.Serializable
 @Entity( tableName = "movie_data")
 data class Result(
@@ -21,4 +24,4 @@ data class Result(
     val video: Boolean?,
     val vote_average: Double?,
     val vote_count: Int?
-):Serializable
+): Serializable

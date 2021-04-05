@@ -7,39 +7,40 @@
 
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.ahmedr.movies_app.ui.fragments.HistoryFragment"
+        android:name="com.ahmedr.movies_app.ui.fragments.SearchFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
+        tools:layout="@layout/fragment_search" >
         <action
-            android:id="@+id/action_historyFragment_to_movieDetailActivity"
-            app:destination="@id/movieDetailActivity"
-            app:enterAnim="@anim/fragment_fade_enter"/>
+            android:id="@+id/action_historyFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedMoviesFragment"
         android:name="com.ahmedr.movies_app.ui.fragments.SavedMoviesFragment"
         android:label="fragment_saved_movies"
-        tools:layout="@layout/fragment_saved_movies" >
+        tools:layout="@layout/fragment_favorit_movies" >
         <action
-            android:id="@+id/action_savedMoviesFragment_to_movieDetailActivity"
-            app:destination="@id/movieDetailActivity" />
+            android:id="@+id/action_savedMoviesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_right"/>
     </fragment>
     <fragment
         android:id="@+id/moviesListFragment"
         android:name="com.ahmedr.movies_app.ui.fragments.MoviesListFragment"
         android:label="MoviesListFragment" >
         <action
-            android:id="@+id/action_moviesListFragment_to_movieDetailActivity"
-            app:destination="@id/movieDetailActivity"
-            app:enterAnim="@anim/fade_in"/>
+            android:id="@+id/action_moviesListFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_right"/>
+
     </fragment>
-    <activity
-        android:id="@+id/movieDetailActivity"
-        android:name="com.ahmedr.movies_app.ui.movie_details.MovieDetailActivity"
-        android:label="activity_movie_detail"
-        tools:layout="@layout/activity_movie_detail" >
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.ahmedr.movies_app.ui.fragments.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" >
         <argument
             android:name="movie_info"
             app:argType="com.ahmedr.movies_app.model.response.Result" />
-    </activity>
+    </fragment>
 </navigation>
