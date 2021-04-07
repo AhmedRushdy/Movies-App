@@ -9,7 +9,7 @@ class MoviesRepository (
         ){
     suspend fun getUpComingMovies(pageNumber:Int) = RetrofitInctance.api.getUpComing(page = pageNumber)
     suspend fun getPopularMovies(pageNumber:Int) = RetrofitInctance.api.getPopularMovies(page = pageNumber)
-    suspend fun searchForMovies(pageNumber:Int , query:String) = RetrofitInctance.api.searchForMovies(page = 1, query )
+    suspend fun searchForMovies(pageNumber:Int , query:String) = RetrofitInctance.api.searchForMovies(pageNumber, query )
 
     //local database
     suspend fun insertMovie(movie:Result) = db.getMoviesDao().insert(movie)

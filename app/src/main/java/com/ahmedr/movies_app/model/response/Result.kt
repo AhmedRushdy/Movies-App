@@ -8,11 +8,11 @@ import com.ahmedr.movies_app.room.Converter
 import java.io.Serializable
 @Entity( tableName = "movie_data")
 data class Result(
-    @PrimaryKey(autoGenerate = true)
     var m_id: Int? = null,
     val adult: Boolean?,
     val backdrop_path: String?,
     val genre_ids: List<Int>?,
+    @PrimaryKey
     val id: Int?,
     val original_language: String?,
     val original_title: String?,
