@@ -22,7 +22,7 @@
 
 
 ## App Images
-![Screenshot_20210407-164804_MovieApp](https://user-images.githubusercontent.com/43193251/113896017-d607fb00-97c9-11eb-9bc6-3a9161b8d118.jpg)
+![Screenshot_20210407-164804_MovieApp](https://user-images.githubusercontent.com/43193251/113896017-d607fb00-97c9-11eb-9bc6-3a9161b8d118.jpg =250x250)
 ![Screenshot_20210407-164812_MovieApp](https://user-images.githubusercontent.com/43193251/113896272-12d3f200-97ca-11eb-8fc6-221093e4e612.jpg)
 ![Screenshot_20210407-164817_MovieApp](https://user-images.githubusercontent.com/43193251/113896299-19fb0000-97ca-11eb-9c87-53920016ff27.jpg)
 ![Screenshot_20210407-164826_MovieApp](https://user-images.githubusercontent.com/43193251/113896316-1d8e8700-97ca-11eb-8538-7e3eca60a4be.jpg)
