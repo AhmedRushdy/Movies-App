@@ -5,7 +5,7 @@
 3. save the favorite in room DB 
 4. search for a spacific movie
 
-### Applying a clean architecture 
+### Applying clean architecture 
 
 ## Technologies used:
 * Kotlin
