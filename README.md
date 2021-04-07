@@ -22,13 +22,12 @@
 
 
 ## App Images
-<img src="https://user-images.githubusercontent.com/43193251/113897488-351a3f80-97cb-11eb-975f-c00f2b43b4a3.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896017-d607fb00-97c9-11eb-9bc6-3a9161b8d118.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896272-12d3f200-97ca-11eb-8fc6-221093e4e612.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896299-19fb0000-97ca-11eb-9c87-53920016ff27.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896316-1d8e8700-97ca-11eb-8538-7e3eca60a4be.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896333-1ff0e100-97ca-11eb-863f-61195da3ad7a.jpg" width="100" height="100">
-<img src="https://user-images.githubusercontent.com/43193251/113896341-21baa480-97ca-11eb-85d8-e08362ebbe49.jpg" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/43193251/113897488-351a3f80-97cb-11eb-975f-c00f2b43b4a3.jpg" width="300" height="550">
+<img src="https://user-images.githubusercontent.com/43193251/113896272-12d3f200-97ca-11eb-8fc6-221093e4e612.jpg" width="300" height="550">
+<img src="https://user-images.githubusercontent.com/43193251/113896299-19fb0000-97ca-11eb-9c87-53920016ff27.jpg" width="300" height="550">
+<img src="https://user-images.githubusercontent.com/43193251/113896316-1d8e8700-97ca-11eb-8538-7e3eca60a4be.jpg" width="300" height="550">
+<img src="https://user-images.githubusercontent.com/43193251/113896333-1ff0e100-97ca-11eb-863f-61195da3ad7a.jpg" width="300" height="550">
+<img src="https://user-images.githubusercontent.com/43193251/113896341-21baa480-97ca-11eb-85d8-e08362ebbe49.jpg" width="300" height="550">
 
 ## App Video && apk Link
 
